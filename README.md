@@ -1,5 +1,5 @@
 ### Description:
-This is a CLI for a localisation-oriented word cloud generator. It takes a conllu file and a pdf file as input. It then extracts the words from the pdf file and counts the number of times they appear in a list of words belonging to a specific part of speech, which is extracted from the conllu file. The output is a word cloud with the words that appear in the pdf file and belong to the specified part of speech. The word cloud is saved as a png file. For more corpuses, see [Universal Dependencies](https://universaldependencies.org/).
+This is a CLI for a localisation-oriented word cloud generator. It takes a conllu file and a pdf file as input. It then extracts the words from the pdf file and counts the number of times they appear in a list of words belonging to a specific part of speech, which is extracted from the conllu file. The output is a word cloud with the words that appear in the pdf file and belong to the specific part of speech. The word cloud is saved as a png file. For more corpuses, see [Universal Dependencies](https://universaldependencies.org/).
 
 ### Usage:
 ```
