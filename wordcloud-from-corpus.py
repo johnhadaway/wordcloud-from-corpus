@@ -6,19 +6,20 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 
 def getPOS(conllu, posList):
+    print(posList)
     words = []
     for sentence in conllu:
         for token in sentence:
             if token.upos in posList and token.form != None:
                 words.append(token.form.lower())
-    return words
+    return list(set(words))
 
-def combineLists(*args):
-    return list(set([item for sublist in args for item in sublist]))
+def combineLists(lists):
+    return list(set([item for sublist in lists for item in sublist]))
 
 def diff(x, y):
-    return list(set(x) - set(y))
-
+    return list(set([item for item in x if item not in y]))
+    
 def getWordsFromPDF(pdf_path):
     words = []
     with open(pdf_path, "rb") as f:
@@ -82,8 +83,10 @@ if __name__ == '__main__':
     conllu = pyconll.load_from_file(args.conllu)
     list1 = getPOS(conllu, [element for element in args.posInclude.split(',')])
     if args.posExclude:
+        exclude_list = []
         list2 = getPOS(conllu, [element for element in args.posExclude.split(',')])
         list1_exclude_2 = diff(list1, list2)
+        print(len(list1_exclude_2))
         df = countTokens(list1_exclude_2, words)
     else:
         df = countTokens(list1, words)
