@@ -3,5 +3,5 @@ This is a CLI for a localisation-oriented word cloud generator. It takes a conll
 
 ### Usage:
 ```
-python wordcloud-from-corpus.py --conllu <path to conllu file> --pdf <path to pdf file> --posInclude <part of speech to be included> --posExclude <part of speech to be excluded> --colormap <matplotlib colormap>
+python wordcloud-from-corpus.py --conllu <path to conllu file> --file <path to either the .pdf or .txt file> --posInclude <part of speech to be included> --posExclude <part of speech to be excluded> --colormap <matplotlib colormap>
 ```
