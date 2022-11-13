@@ -106,4 +106,4 @@ if __name__ == '__main__':
     df = countTokens(list1_exclude_2, words)
     print(df.sort_values(by='Count', ascending=False))
     df.to_csv(
-        f'./output-data/csv/{args.file.split("/")[-1].split(".")[0]}.csv', index=False)
+        f'./output/csv/{args.file.split("/")[-1].split(".")[0]}.csv', index=False)
