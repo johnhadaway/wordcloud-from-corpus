@@ -86,7 +86,7 @@ if __name__ == '__main__':
     elif args.file.endswith('.txt'):
         words = getWordsFromText(args.file)
     else:
-        print('This currently must be either .pdf or .txt')
+        print('file types supprted: .pdf or .txt')
         exit()
 
     conllu = pyconll.load_from_file(args.conllu)
@@ -106,4 +106,4 @@ if __name__ == '__main__':
     df = countTokens(list1_exclude_2, words)
     print(df.sort_values(by='Count', ascending=False))
     df.to_csv(
-        f'./output/csv/{args.file.split("/")[-1].split(".")[0]}.csv', index=False)
+        f'./output/{args.file.split("/")[-1].split(".")[0]}.csv', index=False)
